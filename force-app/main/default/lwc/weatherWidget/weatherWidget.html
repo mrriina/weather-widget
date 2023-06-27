@@ -1,0 +1,46 @@
+<template>
+    <lightning-card variant="Narrow" title="Weather Widget" icon-name="action:map">
+        <div style="padding: 10px 30px;">
+            <lightning-layout>
+                <div>
+                    <lightning-input label="Enter the name of the city:" onchange={handleOnChangeCityName}></lightning-input>
+                </div>
+            </lightning-layout>
+        </div>
+        <div style="justify-content: center; margin-top: 15px; padding: 10px 50px;">
+            <lightning-layout>
+                <lightning-layout-item style="font-size: small; color: orange;">
+                    {localTime}
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item style="font-size: x-large; font-weight: bold;">
+                    {weather.name}, {weather.country}
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout style="margin-top: 15px;">
+                <lightning-layout-item>
+                    <lightning-avatar src={path} size="large" ></lightning-avatar>
+                </lightning-layout-item>
+                <lightning-layout-item style="font-size: x-large; margin-left: 5px;">
+                    {weather.temp}°C
+                </lightning-layout-item>
+                <lightning-layout-item style="font-size: large; margin-left: 15px;">
+                    {weather.weatherDescription}
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout style="font-size: medium;">
+                Humidity: {weather.humidity}%
+            </lightning-layout>
+            <lightning-layout style="font-size: medium;">
+                Wind: {weather.windSpeed}meter/sec
+            </lightning-layout>
+            <lightning-layout style="font-size: medium;">
+                Visibility: {weather.visibility}meter
+            </lightning-layout>
+            <lightning-layout style="font-size: medium;">
+                Pressure: {weather.pressure}hPa
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
